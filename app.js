@@ -14,6 +14,13 @@ if (play == "y") {
   gameDone = false;
   do {
       rng = Math.floor(Math.random() * 10) + 1;
+      if (rng == 1) {
+          if (comHand+11 <= 16) {
+              rng = 11
+          } else {
+              rng = 1
+          }
+      };
       comHand = comHand + rng;
       alert(`The computer drew a ${rng}. Its total is ${comHand}`);
   } while (comHand <= 16);
@@ -34,6 +41,13 @@ if (play == "y") {
           hos = prompt(`You have ${playHand}. Do you want to hit or stand? Type "hit" for hit or "stand" for stand.`);
           if (hos == "hit") {
               rng = Math.floor(Math.random() * 10) + 1;
+              if (rng == 1) {
+                if (playHand+11 <= 16) {
+                    rng = 11
+                } else {
+                    rng = 1
+                }
+            };
               playHand = playHand + rng;
           } else {
               break;
@@ -44,7 +58,7 @@ if (play == "y") {
           comScore++;
           gameDone = true;
       } else if (playHand == 20) {
-       //    alert(`You won this round!`);
+
           playerScore++;
           gameDone = true;
       }else {
