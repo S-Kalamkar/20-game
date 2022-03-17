@@ -72,7 +72,7 @@ if (play == "y") {
           alert(`You won this game!`);
       } else if ((comHand > playHand) && (comHand < 21) && (gameDone == false)) {
           comScore++;
-          alert(`The computer won this round!`);
+          alert(`The computer won this round!`);    
       } else if ((playHand == comHand) && (gameDone == false)){
           alert(`The game is tied!`);
       };
@@ -113,7 +113,3 @@ if (play == "y") {
 } else {
    alert(`Not valid answer. Closing program.`)
 }
- 
-//  jkasdvihufsdoivh bure8sifojdvkhgiruefjsdnhuidjvnkbhuiuighsdfvkjhu
- 
-
