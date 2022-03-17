@@ -21,7 +21,11 @@ if (play == "y") {
               rng = 1
           }
       };
+      if (comHand+rng > 20) {
+          break;
+      }
       comHand = comHand + rng;
+      console.log(comHand)
       alert(`The computer drew a ${rng}. Its total is ${comHand}`);
   } while (comHand <= 16);
   if (comHand > 20) {
@@ -58,13 +62,11 @@ if (play == "y") {
           comScore++;
           gameDone = true;
       } else if (playHand == 20) {
-
           playerScore++;
           gameDone = true;
       }else {
           alert(`You stopped at ${playHand}`);
       }
- 
       if ((playHand > comHand) && (playHand < 21) && (gameDone == false)) {
           playerScore++;
           alert(`You won this game!`);
@@ -74,20 +76,37 @@ if (play == "y") {
       } else if ((playHand == comHand) && (gameDone == false)){
           alert(`The game is tied!`);
       };
- 
       playAgain = prompt(`Would you like to play again? Type "y" for yes or "n" for no.`);
   } else {
-      playAgain = prompt(`Would you like to play again? Type "y" for yes or "n" for no.`);
-    
+      playAgain = prompt(`Would you like to play again? Type "y" for yes or "n" for no.`); 
   };
    } while(playAgain == "y");
- 
    if (comScore > playerScore) {
-       alert(`Thanks for playing! The computer won in total with ${comScore} wins. You had ${playerScore} wins`)
+       if ((comScore != 1) && (playerScore != 1)) {
+           alert(`Thanks for playing! The computer won in total with ${comScore} wins. You had ${playerScore} wins.`)
+       } else if (comScore == 1) {
+        alert(`Thanks for playing! The computer won in total with ${comScore} win. You had ${playerScore} wins.`)
+       } else if (playerScore == 1) {
+        alert(`Thanks for playing! The computer won in total with ${comScore} wins. You had ${playerScore} win.`)
+       } else {
+        alert(`Thanks for playing! The computer won in total with ${comScore} win. You had ${playerScore} win.`)
+       }
    } else if (playerScore > comScore) {
-       alert(`Thanks for playing! You won in total with ${playerScore} wins. The computer had ${comScore} wins`)
+    if ((comScore != 1) && (playerScore != 1)) {
+        alert(`Thanks for playing! You won in total with ${playerScore} wins. The computer had ${comScore} wins.`)
+    } else if (comScore == 1) {
+        alert(`Thanks for playing! You won in total with ${playerScore} wins. The computer had ${comScore} win.`)
+    } else if (playerScore == 1) {
+        alert(`Thanks for playing! You won in total with ${playerScore} win. The computer had ${comScore} wins`)
+    } else {
+        alert(`Thanks for playing! You won in total with ${playerScore} win. The computer had ${comScore} win.`)
+    }
    } else {
-       alert(`Thanks for playing! You and the computer tied with ${playerScore} wins`)
+       if (playerScore != 1) {
+       alert(`Thanks for playing! You and the computer tied with ${playerScore} wins.`)
+    } else {
+        alert(`Thanks for playing! You and the computer tied with ${playerScore} win.`)
+       }
    }
 } else if (play == "n") {
    stop();
